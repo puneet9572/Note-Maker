@@ -1,0 +1,67 @@
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
+
+/* Space out content a bit */
+
+body {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+  color: #333333;
+  text-rendering: optimizeLegibility;
+  line-height: 1.4;
+  font-size: 14px;
+  background: transparent;
+}
+
+*, body {
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: none !important;
+}
+a {
+  cursor: pointer;
+}
+
+a:link, a:visited, a {
+  text-decoration: none;
+  text-decoration-line: none;
+  text-decoration-style: initial;
+  text-decoration-color: initial;
+  color: #aaaaaa;
+}
+
+form {
+  margin: 0 0 2em 0;
+}
+
+input[type="email"], input[type="button"], input[type="submit"], input[type="password"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+input[type="submit"]:disabled {
+  cursor: not-allowed;
+  background: grey;
+}
+
+.v-hidden {
+  visibility: hidden;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}

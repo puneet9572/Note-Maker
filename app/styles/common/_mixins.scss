@@ -1,0 +1,140 @@
+@mixin push--auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+
+// Simple custom media query Mixin for our special cases. Uses cariabled for breakpoint.
+
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - .0625em;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin hardware($backface: true, $perspective: 1000) {
+    @if $backface {
+        backface-visibility: hidden;
+    }
+    perspective: $perspective;
+}
+
+
+
+//  Author: Rafal Bromirski
+//  www: http://rafalbromirski.com/
+//  github: http://github.com/paranoida/sass-mediaqueries
+//
+//  Licensed under a MIT License
+//
+//  Version:
+//  1.6.1
+// Modified by Aram for BHF Project
+
+// --- generator ---------------------------------------------------------------
+
+@mixin mqfull($args...) {
+  $media-type: 'only screen';
+  $media-type-key: 'media-type';
+  $args: keywords($args);
+  $expr: '';
+
+  @if map-has-key($args, $media-type-key) {
+    $media-type: map-get($args, $media-type-key);
+    $args: map-remove($args, $media-type-key);
+  }
+
+  @each $key, $value in $args {
+    @if $value {
+      $expr: "#{$expr} and (#{$key}: #{$value})";
+    }
+  }
+
+  @media #{$media-type} #{$expr} {
+    @content;
+  }
+}
+
+// --- screen ------------------------------------------------------------------
+
+@mixin media-screen($min, $max, $orientation: false) {
+  @include mqfull($min-width: $min, $max-width: $max, $orientation: $orientation) {
+    @content;
+  }
+}
+
+@mixin max-screen($max) {
+  @include mqfull($max-width: $max) {
+    @content;
+  }
+}
+
+@mixin min-screen($min) {
+  @include mqfull($min-width: $min) {
+    @content;
+  }
+}
+
+@mixin screen-height($min, $max, $orientation: false) {
+  @include mqfull($min-height: $min, $max-height: $max, $orientation: $orientation) {
+    @content;
+  }
+}
+
+@mixin max-screen-height($max) {
+  @include mqfull($max-height: $max) {
+    @content;
+  }
+}
+
+@mixin min-screen-height($min) {
+  @include mqfull($min-height: $min) {
+    @content;
+  }
+}
+
+//  END OF MEDIA QUERY MIXIN
+
+@mixin white_link_style{
+  background: $white_20;
+  color: $white-color;
+  text-decoration: none;
+}
+
+@mixin verticle_horizontal_center{
+	margin: auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+@mixin inactive_button_styling{
+	background-color: $medium-gray-color;
+    font-size: 17px;
+    display: inline-block;
+    color: $white-color;
+}
+
+@mixin generic_listicle_icon{
+    width: 24px;
+    height: 26px;
+    background-position: -1px -100px;
+    display: inline;
+    position: absolute;
+    margin-left: -30px;
+    margin-top: -3px;
+}

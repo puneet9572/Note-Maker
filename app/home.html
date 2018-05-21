@@ -1,0 +1,146 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>login webapp</title>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+
+<body class="homepage">
+  <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="/home.html">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <span class="navbar-text">
+         Logout <i class="fas fa-power-off"></i>
+       </span>
+     </div>
+   </nav>
+   <div class="container main-container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center tiles-head">
+          <button type="button" class="new-note" data-toggle="modal" data-target="#noteModal">NEW NOTE</button>
+        </div>
+        <div class="tiles-body row">
+          <div class="col-sm-12">
+            <ul class="tags-rail list-inline v-hidden">
+              <li class="list-inline-item active" data-id="All">All</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <label class="input-100">ENTER A TAG</label>
+            <p class="tag-wrap">
+              <input type="text" id="tag" placeholder="Tag" required="">
+            </p>
+            <label class="input-100">NOTE</label>
+            <p class="text-area-wrap">
+              <textarea id="note-text" placeholder="Type Here"></textarea>
+            </p>
+            <div class="save-note">
+              <button type="button" class="new-note" id="new-note">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <template id="notes-template">
+      {{#.}}
+      <div class="col-sm-12 col-md-4 tile-wrap" data-id="{{tag}}">
+        <div class="img-container"></div>
+        <div class="tiles">
+          <div></div>
+          <p>{{note}}</p>
+        </div>
+      </div>
+      {{/.}}
+    </template>
+
+  <template id="tags-rail-item">
+    {{#.}}
+      <li class="list-inline-item" data-id="{{tag}}"><i class="fas fa-hashtag"></i>&nbsp;&nbsp;{{tag}}</li>
+    {{/.}}
+  </template>
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+          function() {
+            (b[l].q = b[l].q || []).push(arguments)
+          });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = 'https://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+      }(window, document, 'script', 'ga'));
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+
+    </script>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/popper.js/dist/umd/popper.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js scripts/plugins.js -->
+    <script src="/bower_components/bootstrap/js/dist/util.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/alert.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/button.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/carousel.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/collapse.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/dropdown.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/modal.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/tab.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/tooltip.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/popover.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/common/login.js"></script>
+    <script src="scripts/common/home.js"></script>
+    <!-- endbuild -->
+  </body>
+
+  </html>

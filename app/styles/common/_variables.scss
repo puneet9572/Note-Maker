@@ -1,0 +1,12 @@
+
+$breakpoints: (
+    "phone":        40em,
+    "tablet":       64em,
+    "special-nav":  58.125em, /*We need max to be 58.063 and for mixin to be generic difference should be of 0.0625em*/
+);
+
+$roboto-font: 'Roboto', sans-serif;
+
+$black-color: #000;
+
+$white-color: #ffffff;
